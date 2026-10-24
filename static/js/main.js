@@ -1,0 +1,1 @@
+console.log("RepoHunt initialized successfully!");

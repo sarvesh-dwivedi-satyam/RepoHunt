@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0d1117;
+    color: #c9d1d9;
+    line-height: 1.6;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #161b22;
+    border-bottom: 1px solid #30363d;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #58a6ff;
+}
+
+.navbar nav a {
+    color: #c9d1d9;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    transition: color 0.2s;
+}
+
+.navbar nav a:hover {
+    color: #58a6ff;
+}
+
+.hero {
+    max-width: 800px;
+    margin: 4rem auto;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    color: #f0f6fc;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #8b949e;
+    margin-bottom: 2rem;
+}
+
+.search-box {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.search-box input {
+    width: 70%;
+    padding: 0.8rem 1rem;
+    background-color: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    color: #c9d1d9;
+    font-size: 1rem;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: #58a6ff;
+}
+
+.search-box button {
+    padding: 0.8rem 1.5rem;
+    background-color: #238636;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.search-box button:hover {
+    background-color: #2ea043;
+}
