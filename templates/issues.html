@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issue Discovery — RepoHunt</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">RepoHunt 🔍</div>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/search">Explore</a>
+            <a href="/issues">Issues</a>
+        </nav>
+    </header>
+
+    <main class="container" style="max-width: 900px; margin: 2rem auto; padding: 0 1rem;">
+        <h2 style="color: #f0f6fc;">Beginner Issues for "{{ query }}"</h2>
+        
+        {% if issues %}
+            <div class="issue-list" style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                {% for issue in issues %}
+                    <div class="issue-card" style="background: #161b22; border: 1px solid #30363d; padding: 1.5rem; border-radius: 8px;">
+                        <h3 style="margin-bottom: 0.5rem;">
+                            <a href="{{ issue.html_url }}" target="_blank" style="color: #58a6ff; text-decoration: none;">{{ issue.title }}</a>
+                        </h3>
+                        <p style="color: #8b949e; margin-bottom: 1rem; font-size: 0.9rem;">Repository: {{ issue.repository_url.split('/')[-2] }}/{{ issue.repository_url.split('/')[-1] }}</p>
+                        <div style="display: flex; gap: 1.5rem; font-size: 0.85rem; color: #8b949e;">
+                            <span>💬 Comments: {{ issue.comments }}</span>
+                            <span>📅 Created: {{ issue.created_at.split('T')[0] }}</span>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p style="margin-top: 2rem; color: #8b949e;">No beginner issues found for this query right now. Try searching with another keyword!</p>
+        {% endif %}
+    </main>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
