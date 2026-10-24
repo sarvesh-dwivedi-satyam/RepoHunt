@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RepoHunt — Discover & Contribute</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">RepoHunt 🔍</div>
+        <nav>
+            <a href="/">Home</a>
+            <a href="#">Explore</a>
+            <a href="#">Saved</a>
+        </nav>
+    </header>
+
+    <main class="hero">
+        <h1>Find Projects. Discover Issues. Start Contributing.</h1>
+        <p>Simplify your open-source journey with targeted discovery and issue tracking.</p>
+        
+        <form class="search-box" action="/search" method="GET">
+            <input type="text" name="q" placeholder="Search repositories or topics (e.g., machine learning, web scraper)..." required>
+            <button type="submit">Search</button>
+        </form>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
